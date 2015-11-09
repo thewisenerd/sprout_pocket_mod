@@ -51,7 +51,7 @@ int device_is_pocketed(void) {
 
 	if (!(is_screen_on)) {
 		if (pocket_mod_timeout) {
-			if ((read_time_pre - ktime_to_ms(ktime_get())) < pocket_mod_timeout) {
+			if ((ktime_to_ms(ktime_get()) - read_time_pre) < pocket_mod_timeout) {
 				return 0;
 			}
 			read_time_pre = ktime_to_ms(ktime_get());
