@@ -111,9 +111,9 @@ static ssize_t pocket_mod_timeout_set(struct device *dev,
 {
 	unsigned int val = 0;
 
-	sscanf(buf, "%u\n", &val);
-
-	pocket_mod_timeout = val;
+	if (sscanf(buf, "%u\n", &val) == 1) {
+		pocket_mod_timeout = val;
+	}
 
 	return size;
 }
