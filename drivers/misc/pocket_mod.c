@@ -41,7 +41,7 @@ unsigned pocket_mod_switch = 1;
 unsigned pocket_mod_switch = 0;
 #endif
 
-unsigned int pocket_mod_timeout = 0;
+static unsigned int pocket_mod_timeout = 0;
 static cputime64_t read_time_pre = 0;
 
 int device_is_pocketed(void) {
